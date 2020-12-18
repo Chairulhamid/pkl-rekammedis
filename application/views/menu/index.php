@@ -5,7 +5,7 @@
   <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
   <div class="row ">
-    <div class="col-lg-7">
+    <div class="col-lg-12">
       <!-- hasil sukses -->
       <?= $this->session->flashdata('message'); ?>
 
@@ -15,7 +15,7 @@
       <table class="table table-hover border text-center">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">No</th>
             <th scope="col">Menu</th>
             <th scope="col">Action</th>
           </tr>

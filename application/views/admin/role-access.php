@@ -16,7 +16,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">No</th>
             <th scope="col">Menu</th>
             <th scope="col">Akses</th>
           </tr>

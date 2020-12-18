@@ -11,8 +11,9 @@ class User extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'PROFIL ADMIN';
+        $data['title'] = 'PROFIL ';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+         
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -67,7 +68,7 @@ class User extends CI_Controller
 
     public function ChangePassword()
     {
-        $data['title'] = 'Change Password';
+        $data['title'] = 'Ubah Password';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');

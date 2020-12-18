@@ -17,6 +17,7 @@
             <th scope="col">No</th>
             <th scope="col">NIP</th>
             <th scope="col">Nama Petugas</th>
+            <th scope="col">Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -27,8 +28,9 @@
               <th scope="row"><?= $i; ?></th>
               <td><?= $np['nik']; ?></td>
               <td><?= $np['nama_petugas']; ?></td>
+              <td><?= $np['status']; ?></td>
               <td>
-                <a href="javascript:;" class="btn btn-info btn-sm" data-id="<?php echo $np['id'] ?>" data-nik="<?php echo $np['nik'] ?>" data-nama_petugas="<?php echo $np['nama_petugas'] ?>" data-toggle="modal" data-target="#edit-petugas"><i class="fa fa-edit"></i> Edit</a>
+                <a href="javascript:;" class="btn btn-info btn-sm" data-id="<?php echo $np['id'] ?>" data-nik="<?php echo $np['nik'] ?>" data-nama_petugas="<?php echo $np['nama_petugas'] ?>" data-status="<?php echo $np['status'] ?>" data-toggle="modal" data-target="#edit-petugas"><i class="fa fa-edit"></i> Edit</a>
                 <a href="<?= base_url('Admin/petugas_hapus/' . $np['id']) ?>" onclick="return confirm('Anda Yakin ingin Menghapus Data Ini???');" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</a>
               </td>
             </tr>
@@ -67,6 +69,10 @@
               <label for="nama_petugas" class="control-label col-xs-1" style="font-weight: bold;">Nama Petugas</label>
               <input type="text" name="nama_petugas" id="nama_petugas" value="" class="form-control" placeholder="Masukan Nama Petugas..." required>
             </div>
+            <div class="form-group col-md-12">
+              <label for="status" class="control-label col-xs-1" style="font-weight: bold;">Status Petugas</label>
+              <input type="text" name="status" id="status" value="" class="form-control" placeholder="Masukan Status Petugas..." required>
+            </div>
             <div class="modal-footer">
 
               <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> Tambah</button>
@@ -103,7 +109,14 @@
               <input name="nama_petugas" id="nama_petugas" class="form-control" type="text" required>
             </div>
           </div>
+          <div class="form-group">
+            <div class="form-group ">
+              <label class="control-label col-xs-3" style="font-weight: bold;">Status Petugas</label>
+              <input name="status" id="status" class="form-control" type="text" required>
+            </div>
+          </div>
         </div>
+       
         <div class="modal-footer">
           <button class="btn btn-info" type="submit"> Simpan&nbsp;</button>
           <button type="button" class="btn btn-warning" data-dismiss="modal"> Batal</button>
@@ -126,6 +139,7 @@
       modal.find('#id').attr("value", div.data('id'));
       modal.find('#nik').attr("value", div.data('nik'));
       modal.find('#nama_petugas').attr("value", div.data('nama_petugas'));
+      modal.find('#status').attr("value", div.data('status'));
 
     });
     $("#hapus-data").click(function() {

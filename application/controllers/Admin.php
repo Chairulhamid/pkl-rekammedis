@@ -151,7 +151,8 @@ class Admin extends CI_Controller
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['namaPetugas'] = $this->db->get('tb_petugas')->result_array();
     $this->form_validation->set_rules('nik', 'Nik', 'required');
-    $this->form_validation->set_rules('nama_petugas', 'Nama Petugas', 'required');
+    $this->form_validation->set_rules('nama_petugas', 'Nama Petugas','required');
+    $this->form_validation->set_rules('status', 'Status','required');
 
     if ($this->form_validation->run() == false) {
       $this->load->view('templates/header', $data);
@@ -164,7 +165,8 @@ class Admin extends CI_Controller
       //simpan data
       $dataPetugas = [
         'nik'          => $this->input->post('nik'),
-        'nama_petugas' => $this->input->post('nama_petugas')
+        'nama_petugas' => $this->input->post('nama_petugas'),
+        'status' => $this->input->post('status')
 
       ];
       $this->db->insert('tb_petugas', $dataPetugas);
@@ -180,6 +182,7 @@ class Admin extends CI_Controller
     $data = array(
       'nik' => $this->input->post('nik'),
       'nama_petugas' => $this->input->post('nama_petugas'),
+      'status' => $this->input->post('status'),
 
     );
     $this->rekammedis_model->petugas_ubah($data, $id);

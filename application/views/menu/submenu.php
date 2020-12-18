@@ -5,7 +5,7 @@
   <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
   <div class="row">
-    <div class="col-lg-20">
+    <div class="col-lg-12">
       <?php if (validation_errors()) :  ?>
         <div class="alert alert-danger" role="alert">
           <?= validation_errors(); ?>
@@ -14,7 +14,8 @@
       <!-- hasil sukses -->
       <?= $this->session->flashdata('message'); ?>
       <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newSubMenuModal"><i class="fa fa-plus"></i> Tambah Sub Menu Baru</a>
-      <table class="table table-hover border text-center">
+      <table class="table table-hover border text-center display nowrap dataTable dtr-inline  text-center "   >
+       <!-- <table class="table table-hover display nowrap dataTable dtr-inline table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0" style="text-align:center"> -->
         <thead>
           <tr>
             <th>No</th>

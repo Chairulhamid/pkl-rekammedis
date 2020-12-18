@@ -2,9 +2,11 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+  <h1 class="h2 mb-4 text-gray-800"><b><?= $title; ?></b></h1>
   <div class="col">
-    <div class="col-lg-7">
+  
+    <div class="col-lg-12">
+      <h4 class="h4 mb-4 text-gray-800"><b>Akun</b></h4>
 
       <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
       <?= $this->session->flashdata('pesan'); ?>
@@ -35,8 +37,11 @@
         </tbody>
       </table>
     </div>
-    <div class="col-lg-7">
+    <div class="col-lg-12">
+      <br>
+      <hr>
 
+      <h4 class="h4 mb-4 text-gray-800"><b>Hak Akses</b></h4>
       <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
       <!-- hasil sukses -->
       <?= $this->session->flashdata('message'); ?>
